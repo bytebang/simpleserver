@@ -32,10 +32,13 @@ public class App
 	    {
 		    Path p = Paths.get(base);
 	    	rm = new PathResourceManager(p);
+	    	
+	    	System.out.println("Will serve content of directory " + base + " on port " + port);
 	    }
 	    else
 	    {
 	    	rm = new ClassPathResourceManager(App.class.getClassLoader(), "at/htlle/simpleserver/staticfiles");
+	    	System.out.println("Will serve compiled content on port " + port);
 	    }
 	    
     	Undertow server = Undertow.builder()
