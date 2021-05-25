@@ -26,6 +26,11 @@ If the data should not be compiled into the jar the it is possible to point the 
 
 With the commandline from above the server will look for files within the /tmp/www directory (instead of serving content from within the jar)
 
+If you also want to have a directory listing from within your wwwroot then you can allow this via setting the parameter _allowDirectoryListing_ to true.
+
+
+`java -Dwwwroot=/tmp/www -DallowDirectoryListing=true -jar simpleserver.jar`
+
 #compiling
 
 Compilation is done via maven:

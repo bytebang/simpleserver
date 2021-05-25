@@ -41,9 +41,21 @@ public class App
 	    	System.out.println("Will serve compiled content on port " + port);
 	    }
 	    
+	    ResourceHandler handler = new ResourceHandler(rm);
+	    
+	    // Directorylisting anyone ?
+	    String allowDirectoryListing = System.getProperty("allowDirectoryListing");
+	    if(Boolean.parseBoolean(allowDirectoryListing) == true)
+	    {
+		    handler.setDirectoryListingEnabled(true);
+		    System.out.println("Will allow directory listing");
+	    }
+	    
+
+	    // Start the server
     	Undertow server = Undertow.builder()
                 .addHttpListener(portnumber, "localhost")
-                .setHandler(new ResourceHandler(rm))
+                .setHandler(handler)
                 .build();
     	
         server.start();
