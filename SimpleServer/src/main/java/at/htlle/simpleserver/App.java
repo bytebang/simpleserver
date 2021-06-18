@@ -33,12 +33,12 @@ public class App
 		    Path p = Paths.get(base);
 	    	rm = new PathResourceManager(p);
 	    	
-	    	System.out.println("Will serve content of directory " + base + " on port " + port);
+	    	System.out.println("Will serve content of directory " + base + " on port " + portnumber);
 	    }
 	    else
 	    {
 	    	rm = new ClassPathResourceManager(App.class.getClassLoader(), "at/htlle/simpleserver/staticfiles");
-	    	System.out.println("Will serve compiled content on port " + port);
+	    	System.out.println("Will serve static content on port " + portnumber);
 	    }
 	    
 	    ResourceHandler handler = new ResourceHandler(rm);
