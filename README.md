@@ -31,10 +31,32 @@ If you also want to have a directory listing from within your wwwroot then you c
 
 `java -Dwwwroot=/tmp/www -DallowDirectoryListing=true -jar simpleserver.jar`
 
-#compiling
+## compiling
 
 Compilation is done via maven:
 
 ```
 mvn package
 ```
+
+## testing 
+
+If the programm works correctly on your machine could be tested with a webbrower. Start the simple server in a shell open a browser and type 
+
+```
+127.0.0.1:myport/myfile.txt
+```
+
+For example starting with no port and no file resource specified
+
+```
+127.0.0.1:8080/myfile.txt
+```
+
+should deliver
+
+```
+This is a simple text file
+```
+
+in your browerwindow.
